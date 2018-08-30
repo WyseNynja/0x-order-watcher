@@ -33,17 +33,22 @@ app.post('/v0/order', (req, res) => {
     console.log('HTTP: POST order');
     const order = req.body;
 
-
     try {
         orderWatcher.addOrder(convertToBigNumber(order));
         res.status(201).send({});
+        console.log('Watching order ' + order.orderHash);
     } catch (e) {
         res.status(400).send(e.message)
     }
 
 });
 
-app.listen(process.env.PORT, () => console.log('Order watcher listening on port 3000!'));
+app.listen(process.env.PORT, () => {
+    console.log('Order watcher listening on port' + process.env.PORT);
+    console.log('Provider: ' + process.env.PROVIDER);
+    console.log('Relayer: ' + process.env.RELAYER);
+    console.log('Network Id: ' + process.env.NETWORK_ID)
+});
 
 const keys = [
     'salt',
