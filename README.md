@@ -1,12 +1,12 @@
-###0x order watcher wrapper
+### 0x order watcher wrapper
 
 This docker image wraps 0x order watcher in to restfull node-express application.
 
-####available methods:
+#### available methods:
 
-#####POST /v0/order
+##### POST /v0/order
 accepts 0x SignedOrder and starts watching on it changes
-######request
+###### request
 ```json
   {
         "orderHash": "0x6305677c90f2eaf60b59a4972ed7832140febd931ca9553d740f90daa86f7c2d",
@@ -29,12 +29,12 @@ accepts 0x SignedOrder and starts watching on it changes
         }
     }
 ```
-######response
+###### response
 ```json{}```
 
 if something in order changed application informs about changes with post request to RELAYER url (this can be set through env config)
 
-######request on valid order
+###### request on valid order
 ```json
 {
   "isValid":true,
@@ -52,7 +52,7 @@ if something in order changed application informs about changes with post reques
 }
 ```
 
-######request on invalid order
+###### request on invalid order
 ```json
 {
   "isValid":false,
@@ -61,7 +61,7 @@ if something in order changed application informs about changes with post reques
 }
 ```
 
-if order becomes invalid application stops watching on. to start watching again post SignedOrder to /v0/order
+if order becomes invalid application stop watching on it. To start watching again post SignedOrder to /v0/order
 
 docker-compose quick start: 
 
