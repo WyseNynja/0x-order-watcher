@@ -94,7 +94,7 @@ If order becomes invalid, the application stops watching the order.
 }
 ```
 
-#### docker-compose quick start
+## docker-compose quick start
 
 ```yaml
   0x-order-watcher:
@@ -109,7 +109,7 @@ If order becomes invalid, the application stops watching the order.
       - "3001:3001"
 ```
 
-#### TODO
+## TODO
 
 * Make sure the fields that we POST to the relayer match what is documented in this README
 * Make POST /v2/order return the orderHash in the response
