@@ -6,7 +6,7 @@ This docker image wraps 0x order watcher in a RESTful node-express application.
 
 ### POST /v2/order
 
-Watch a 0x V2 signed order for changes.
+Watch a 0x V2 signed order for changes. When a change happens, the application will POST to a relayer.
 
 #### POST /v2/order Request
 
@@ -38,8 +38,6 @@ HTTP 201
   "orderHash": "0x90192732bcf8b5b7e280d0c369cf0d034c7b9e3d31668e631e3ca344070680ef"
 }
 ```
-
-if something in order changed application informs about changes with post request to RELAYER url (this can be set through env config)
 
 ### DELETE /v2/order
 
