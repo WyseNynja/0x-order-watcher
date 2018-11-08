@@ -42,7 +42,7 @@ orderWatcher.subscribe((error, orderState) => {
 const app = express();
 app.use(bodyParser.json());
 
-app.post("/v0/order", (req, res) => {
+app.post("/v2/order", (req, res) => {
   // TODO: receive websocket request instead of POST
   console.log("HTTP: POST order");
   const order = req.body;
@@ -62,7 +62,7 @@ app.post("/v0/order", (req, res) => {
   }
 });
 
-app.delete("/v0/order", (req, res) => {
+app.delete("/v2/order", (req, res) => {
   // TODO: receive websocket request instead of POST
   console.log("HTTP: DELETE order");
   const orderHash = req.body;
