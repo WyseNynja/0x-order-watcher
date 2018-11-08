@@ -111,8 +111,8 @@ If order becomes invalid, the application stops watching the order.
 
 #### TODO
 
-[ ] Make sure the fields that we POST to the relayer match what is documented in this README
-[ ] Make POST /v2/order return the orderHash in the response
-[ ] [Endpoint for stats](https://github.com/0xProject/0x-monorepo/pull/1118)
-[ ] Websockets instead of HTTP for Ethereum provider
-[ ] Websockets instead of HTTP for Relayer POSTs
+* Make sure the fields that we POST to the relayer match what is documented in this README
+* Make POST /v2/order return the orderHash in the response
+* [Endpoint for stats](https://github.com/0xProject/0x-monorepo/pull/1118)
+* Websockets instead of HTTP for Ethereum provider
+* Websockets instead of HTTP for Relayer POSTs
