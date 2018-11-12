@@ -57,6 +57,7 @@ app.post("/v2/order", (req, res) => {
     res.status(201).send(order.orderHash);
     console.log("Watching order " + order.orderHash);
   } catch (e) {
+    console.log("ERROR: " + e.message);
     // TODO: what status code? 400 or 500?
     res.status(400).send(e.message);
   }

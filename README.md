@@ -77,9 +77,8 @@ If order becomes invalid, the application stops watching the order.
     "makerFeeBalance": "29970000000000000000",
     "makerFeeProxyAllowance": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
     "filledTakerTokenAmount": "1000000000000000000",
-    "cancelledTakerTokenAmount": "0",
-    "remainingFillableMakerTokenAmount": "9000000000000000",
-    "remainingFillableTakerTokenAmount": "9000000000000000000"
+    "remainingFillableMakerAssetAmount": "9000000000000000",
+    "remainingFillableTakerAssetAmount": "9000000000000000000"
   }
 }
 ```
