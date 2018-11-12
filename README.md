@@ -115,3 +115,5 @@ If order becomes invalid, the application stops watching the order.
 * [Endpoint for stats](https://github.com/0xProject/0x-monorepo/pull/1118)
 * Websockets instead of HTTP for Ethereum provider
 * Websockets instead of HTTP for Relayer POSTs
+* updated to order-watcher v2.2.3 once it is released to fix websocket provider
+* https://github.com/0xProject/0x-monorepo/issues/1130
