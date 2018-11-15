@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+set -e
+
+. /etc/common.sh
+
+echo "Waiting for consul..."
+s6-svwait -U /var/run/s6/services/consul
+
+echo "Waiting for dab sidecar proxy..."
+s6-svwait -u /var/run/s6/services/dab_0x_watcher-sidecar
+
+cd /usr/src/myapp
+# TODO: don't run as root
+exec yarn run start

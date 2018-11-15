@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+set -e
+
+. /etc/common.sh
+
+echo "Waiting for consul..."
+s6-svwait -U /var/run/s6/services/consul
+
+exec consul connect proxy -sidecar-for dab_0x_watcher

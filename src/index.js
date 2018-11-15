@@ -88,6 +88,7 @@ app.listen(process.env.WATCHER_PORT, () => {
   console.log("ETH Network Id: " + process.env.ETHEREUM_NETWORK_ID);
 });
 
+// https://github.com/0xProject/0x-monorepo/issues/92
 const big_number_keys = [
   "salt",
   "makerFee",
