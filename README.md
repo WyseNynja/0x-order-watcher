@@ -117,3 +117,4 @@ If order becomes invalid, the application stops watching the order.
 * Websockets instead of HTTP for Relayer POSTs
 * updated to order-watcher v2.2.3 once it is released to fix websocket provider
 * https://github.com/0xProject/0x-monorepo/issues/1130
+* trigger this build job when parent image builds

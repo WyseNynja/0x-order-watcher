@@ -1,0 +1,26 @@
+{
+  "service": {
+    "name": "dab_zrx_watcher",
+    "port": 3001,
+    "connect": {
+      "sidecar_service": {
+        "proxy": {
+          "upstreams": [
+            {
+              "destination_name": "dab",
+              "local_bind_port": 3000
+            },
+            {
+              "destination_name": "ethereum-geth-rpc",
+              "local_bind_port": 8545
+            },
+            {
+              "destination_name": "ethereum-geth-ws",
+              "local_bind_port": 8546
+            }
+          ]
+        }
+      }
+    }
+  }
+}

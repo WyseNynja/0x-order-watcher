@@ -7,8 +7,14 @@ echo "Waiting for consul..."
 s6-svwait -U /var/run/s6/services/consul
 
 echo "Waiting for dab sidecar proxy..."
-s6-svwait -u /var/run/s6/services/dab_0x_watcher-sidecar
+s6-svwait -u /var/run/s6/services/dab_zrx_watcher-sidecar
 
 cd /usr/src/myapp
+
+if [ -n "$DEVELOP" ]; then
+  echo "DEVELOP MODE ENABLED! RUN yarn run start YOURSELF"
+  exec tail -f /dev/null
+fi
+
 # TODO: don't run as root
-exec yarn run start
+#exec yarn run start

@@ -6,4 +6,4 @@ set -e
 echo "Waiting for consul..."
 s6-svwait -U /var/run/s6/services/consul
 
-exec consul connect proxy -sidecar-for dab_0x_watcher
+exec consul connect proxy -sidecar-for dab_zrx_watcher

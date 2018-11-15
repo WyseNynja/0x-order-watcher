@@ -1,6 +1,4 @@
-node_modules
-npm-debug.log
-*.idea
-.git
 .env
-package-lock.json
+.git
+.idea
+src/node_modules

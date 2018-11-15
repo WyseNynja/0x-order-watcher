@@ -1,4 +1,3 @@
-*.idea
-/node_modules
 .env
-package-lock.json
+.idea
+src/node_modules
