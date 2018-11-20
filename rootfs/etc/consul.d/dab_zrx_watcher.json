@@ -17,6 +17,10 @@
             {
               "destination_name": "ethereum-geth-ws",
               "local_bind_port": 8546
+            },
+            {
+              "destination_name": "ganache",
+              "local_bind_port": 8645
             }
           ]
         }

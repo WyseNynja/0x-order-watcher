@@ -6,8 +6,10 @@ const OrderWatcher = require("@0x/order-watcher").OrderWatcher;
 const request = require("request");
 const Web3 = require("web3");
 
-//const provider = new Web3.providers.HttpProvider(process.env.ETHEREUM_HTTP_PROVIDER);
-const provider = new Web3.providers.WebsocketProvider(process.env.ETHEREUM_WS_PROVIDER);
+// ganache doesn't have a websocket provider
+// TODO: make this easier to toggle
+const provider = new Web3.providers.HttpProvider(process.env.ETHEREUM_HTTP_PROVIDER);
+//const provider = new Web3.providers.WebsocketProvider(process.env.ETHEREUM_WS_PROVIDER);
 
 const orderWatcher = new OrderWatcher(provider, +process.env.ETHEREUM_NETWORK_ID);
 
