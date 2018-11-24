@@ -86,6 +86,12 @@ COPY ./rootfs/ /
 # thanks to consul connect, we can use localhost for TLS connections to remote services
 #    ETHEREUM_WS_PROVIDER=ws://localhost:8546 \
 ENV RELAYER_HTTP=http://localhost:3000/api/0x/v2/order/ \
-    ETHEREUM_HTTP_PROVIDER=http://localhost:8645 \
-    ETHEREUM_NETWORK_ID=42 \
+    ETHEREUM_HTTP_PROVIDER=http://localhost:8545 \
+    ETHEREUM_WS_PROVIDER=http://localhost:8546 \
+    ETHEREUM_NETWORK_ID=1 \
     WATCHER_PORT=3001
+
+# ENV RELAYER_HTTP=http://localhost:3000/api/0x/v2/order/ \
+#     ETHEREUM_HTTP_PROVIDER=http://localhost:8645 \
+#     ETHEREUM_NETWORK_ID=42 \
+#     WATCHER_PORT=3001
