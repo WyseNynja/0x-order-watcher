@@ -54,12 +54,12 @@ app.post("/v2/order", (req, res) => {
     const orderHash = orderHashUtils.getOrderHashHex(order);
 
     // TODO: what should we return? just the order hash?
-    res.status(201).send(orderHash);
+    res.status(201).send({"orderHash": orderHash});
     console.log("Watching order " + orderHash);
   } catch (e) {
     console.log("ERROR: " + e);
     // TODO: what status code? 400 or 500?
-    res.status(400).send(e.message);
+    res.status(400).send({"error": e.message});
   }
 });
 
@@ -73,11 +73,11 @@ app.delete("/v2/order", (req, res) => {
     expirationWatcher.removeOrder(orderHash);
 
     // TODO: what should we return?
-    res.status(200).send(orderHash);
+    res.status(200).send({"orderHash": orderHash});
     console.log("Stopped watching order " + orderHash);
   } catch (e) {
     // TODO: what status code? 400 or 500?
-    res.status(400).send(e.message);
+    res.status(400).send({"error": e.message});
   }
 });
 
