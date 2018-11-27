@@ -94,8 +94,8 @@ const big_number_keys = [
   "salt",
   "makerFee",
   "takerFee",
-  "makerTokenAmount",
-  "takerTokenAmount",
+  "makerAssetAmount",
+  "takerAssetAmount",
   "expirationTimeSeconds"
 ];
 function convertToBigNumber(order) {
