@@ -8,8 +8,8 @@ const Web3 = require("web3");
 
 // ganache doesn't have a websocket provider
 // TODO: make this easier to toggle
-const provider = new Web3.providers.HttpProvider(process.env.ETHEREUM_HTTP_PROVIDER);
-//const provider = new Web3.providers.WebsocketProvider(process.env.ETHEREUM_WS_PROVIDER);
+// const provider = new Web3.providers.HttpProvider(process.env.ETHEREUM_HTTP_PROVIDER);
+const provider = new Web3.providers.WebsocketProvider(process.env.ETHEREUM_WS_PROVIDER);
 
 const orderWatcher = new OrderWatcher(provider, +process.env.ETHEREUM_NETWORK_ID);
 
@@ -43,7 +43,6 @@ app.use(bodyParser.json());
 
 app.post("/v2/order", (req, res) => {
   // TODO: receive websocket request instead of POST
-
   try {
     order = convertToBigNumber(req.body);
 
@@ -64,13 +63,11 @@ app.post("/v2/order", (req, res) => {
 });
 
 app.delete("/v2/order", (req, res) => {
-  // TODO: receive websocket request instead of POST
-  console.log("HTTP: DELETE order");
-  const orderHash = req.body;
-
+  // TODO: receive websocket request instead of DELETE
   try {
+    const orderHash = req.body;
+
     orderWatcher.removeOrder(orderHash);
-    expirationWatcher.removeOrder(orderHash);
 
     // TODO: what should we return?
     res.status(200).send({"orderHash": orderHash});
