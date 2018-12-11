@@ -1,4 +1,4 @@
-FROM gitlab.stytt.com:5001/docker/linux-s6-consul/debian
+FROM gitlab-registry.stytt.com/docker/linux-s6-consul/debian
 
 ENV PYTHON python2.7
 RUN docker-install \
